@@ -28,6 +28,8 @@ Should compile very easy, no weird dependencies.
 
 # How it works
 
+This launcher is based on scrcpy, https://github.com/genymobile/scrcpy/
+
 Communication between the Android device and the computer is primarily performed via a USB connection and Android Debug Bridge (ADB).
 
 The software functions by executing a server on the Android device, then communicating with the server via a socket over an ADB tunnel.
