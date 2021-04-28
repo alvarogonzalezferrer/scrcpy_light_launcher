@@ -1,0 +1,225 @@
+{-------------------------------------------------------------------------------
+scrcpy light launcher
+
+by Alvaro 'krono' Gonzalez Ferrer
+
+https://alvarogonzalezferrer.github.io/
+
+Copyright (c) 2021
+
+In loving memory of my father.
+
+Released under the MIT license.
+
+--------------------------------------------------------------------------------
+This app is a launcher for:
+
+Scrcpy: Display and control your Android device
+
+Source of scrcpy https://github.com/Genymobile/scrcpy
+
+This application provides display and control of Android devices connected
+on USB (or over TCP/IP). It does not require any root access.
+--------------------------------------------------------------------------------
+To compile:
+Source code for Lazarus > https://www.lazarus-ide.org/
+-------------------------------------------------------------------------------}
+unit main;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, StdCtrls,
+  Process, LCLType, ComCtrls, about_form, help_form;
+
+type
+
+  { Tform_main }
+
+  Tform_main = class(TForm)
+    btn_launch: TButton;
+    bitrate_label: TLabel;
+    check_video_orientation: TCheckBox;
+    check_max_size_vid: TCheckBox;
+    check_max_fps_vid: TCheckBox;
+    check_video_recording: TCheckBox;
+    combo_video_orientation: TComboBox;
+    combo_max_size_vid: TComboBox;
+    combo_max_fps_vid: TComboBox;
+    menu_help: TMenuItem;
+    select_scrcpy_exe_dialog: TOpenDialog;
+    record_filename_video: TEdit;
+    groupVideo: TGroupBox;
+    menu_main1: TMainMenu;
+    menu_menu: TMenuItem;
+    menu_config: TMenuItem;
+    menu_about: TMenuItem;
+    menu_exit: TMenuItem;
+    bitrate_bar: TTrackBar;
+    video_record_save_dialog: TSaveDialog;
+    procedure bitrate_barChange(Sender: TObject);
+    procedure btn_launchClick(Sender: TObject);
+    procedure check_max_fps_vidChange(Sender: TObject);
+    procedure check_max_size_vidChange(Sender: TObject);
+    procedure check_video_orientationChange(Sender: TObject);
+    procedure check_video_recordingChange(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure menu_aboutClick(Sender: TObject);
+    procedure menu_configClick(Sender: TObject);
+    procedure menu_exitClick(Sender: TObject);
+    procedure menu_helpClick(Sender: TObject);
+    procedure record_filename_videoClick(Sender: TObject);
+
+  private
+
+  public
+
+  end;
+
+var
+  form_main: Tform_main;
+  // config
+  path_to_scrcpy : AnsiString = 'scrcpy.exe';
+
+
+implementation
+
+{$R *.lfm}
+
+{ Tform_main }
+
+procedure Tform_main.btn_launchClick(Sender: TObject);
+var
+   s : AnsiString; // string return
+   p: array[1..5] of AnsiString; // parameters
+   tmp : AnsiString; // save button caption
+begin
+     // todo init parameters
+     p[1] := '';  // bitrate
+     p[2] := '';  // max size
+     p[3] := '';  // max fps
+     p[4] := '';  // orientation
+     p[5] := '';  // record
+
+     if (bitrate_bar.Position > 0) then
+        p[1] := '--bit-rate ' + IntToStr(bitrate_bar.Position) +'M';
+
+     if (check_max_size_vid.Checked) then
+        p[2] := '--max-size ' + combo_max_size_vid.Text;
+
+     if (check_max_fps_vid.Checked) then
+        p[3] := '--max-fps ' + combo_max_fps_vid.Text;
+
+     if (check_video_orientation.Checked) then
+        p[4] := '--lock-video-orientation ' + IntToStr(combo_video_orientation.ItemIndex);
+
+     if (check_video_recording.Checked) then
+        p[5] := '--record ' + record_filename_video.Text;
+
+     // message while we wait
+     tmp := btn_launch.Caption;
+     btn_launch.Caption := 'WAITING!';
+
+     // run the scrcpy show
+     RunCommand(path_to_scrcpy, p, s);
+
+     // restore caption
+     btn_launch.Caption := tmp;
+end;
+
+procedure Tform_main.check_max_fps_vidChange(Sender: TObject);
+begin
+  // enable disable combo box
+  combo_max_fps_vid.Enabled := check_max_fps_vid.Checked;
+end;
+
+procedure Tform_main.check_max_size_vidChange(Sender: TObject);
+begin
+  // enable / disable combo box
+  combo_max_size_vid.Enabled := check_max_size_vid.Checked;
+end;
+
+procedure Tform_main.check_video_orientationChange(Sender: TObject);
+begin
+  // enable disable combo box
+  combo_video_orientation.Enabled := check_video_orientation.Checked;
+end;
+
+procedure Tform_main.check_video_recordingChange(Sender: TObject);
+begin
+  // enable / disable
+  record_filename_video.Enabled := check_video_recording.Checked;
+
+  // if enabled, then select file
+  if record_filename_video.Enabled then
+     record_filename_videoClick(Sender); // fake click
+end;
+
+procedure Tform_main.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+var
+   reply : Integer;
+begin
+     // confirm close // debug annyoing?
+     // end app
+     reply := Application.MessageBox('Exit, are you sure?', 'Exit', MB_ICONQUESTION + MB_YESNO);
+     if reply = IDNO then CloseAction := caNone;
+end;
+
+procedure Tform_main.bitrate_barChange(Sender: TObject);
+
+begin
+  // video bitrate changed, in megabytes
+  // DEBUG 0 deberia ser valor default TODO
+  if bitrate_bar.Position > 0 then
+     bitrate_label.Caption := 'Bitrate ' + IntToStr(bitrate_bar.Position) + ' Mbps'
+  else
+      bitrate_label.Caption := 'Bitrate default';
+
+end;
+
+procedure Tform_main.FormCreate(Sender: TObject);
+begin
+  // TODO debug should load config here
+end;
+
+procedure Tform_main.menu_aboutClick(Sender: TObject);
+begin
+  aboutForm.ShowModal; // about me form
+end;
+
+procedure Tform_main.menu_configClick(Sender: TObject);
+begin
+  // config
+  if select_scrcpy_exe_dialog.Execute then
+     path_to_scrcpy := select_scrcpy_exe_dialog.FileName;
+end;
+
+procedure Tform_main.menu_exitClick(Sender: TObject);
+var
+   reply: Integer;
+begin
+     // end app
+     reply := Application.MessageBox('Exit, are you sure?', 'Exit', MB_ICONQUESTION + MB_YESNO);
+     if reply = IDYES then Application.Terminate;
+end;
+
+procedure Tform_main.menu_helpClick(Sender: TObject);
+begin
+     // show help
+     helpForm.Show;
+end;
+
+procedure Tform_main.record_filename_videoClick(Sender: TObject);
+begin
+     // open dialog for file select
+     // https://wiki.freepascal.org/Howto_Use_TSaveDialog
+     if video_record_save_dialog.Execute then
+        record_filename_video.Text := video_record_save_dialog.FileName; // take tne file the user selected
+end;
+
+
+end.
+
