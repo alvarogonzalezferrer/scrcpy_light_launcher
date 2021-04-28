@@ -12,6 +12,8 @@ I did this launcher because all the other tools were paid, or command line, or h
 
 This is a very light, very fast, very easy and open source alternative.
 
+I don't like bloated apps that depend on a million libraries to do simple things.
+
 # How to use
 
 Download one of the releases pre-compiled for your system.
