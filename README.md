@@ -20,6 +20,40 @@ Download one of the releases pre-compiled for your system.
 
 Just run the executable file and select the options.
 
+This application provides display and control of Android devices connected on USB.
+
+## Requirements
+
+The Android device requires at least API 21 (**Android +5.0**).
+
+**Make sure you enabled "adb debugging" on your device.**
+
+On some devices, you also need to enable an additional option to control it using keyboard and mouse.
+
+** VERY IMPORTANT ENABLE DEBUG ON YOUR DEVICE **
+
+Enable adb debugging on your device as follows:
+
+To use adb with a device connected over USB, you must enable USB debugging in the device system settings, under Developer options. 
+
+On Android 4.2 and higher, the Developer options screen is hidden by default. 
+
+To make it visible, go to Settings > About phone and tap Build number SEVEN times.
+
+Return to the previous screen to find Developer options at the bottom.
+
+On some devices, the Developer options screen might be located or named differently.
+
+MOUSE AND KEYBOARD:
+
+If Mouse and keyboard do not work:
+
+On some devices, you may need to enable an option to allow simulating input. In developer options, enable:
+
+USB debugging (Security settings)
+
+Allow granting permissions and simulating input via USB debugging
+
 # How to compile
 
 You need to use Lazarus IDE, https://www.lazarus-ide.org/
