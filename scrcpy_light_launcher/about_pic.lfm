@@ -1,14 +1,13 @@
 object KronoPic: TKronoPic
-  Left = 604
+  Left = 234
   Height = 480
-  Top = 238
+  Top = 132
   Width = 640
   BorderIcons = []
   BorderStyle = bsNone
   Caption = 'Krono For Ever!'
   ClientHeight = 480
   ClientWidth = 640
-  DesignTimePPI = 192
   FormStyle = fsStayOnTop
   OnCreate = FormCreate
   Position = poMainFormCenter
@@ -19,6 +18,10 @@ object KronoPic: TKronoPic
     Hint = 'Krono from Argentina, to the world!'#13#10#13#10'Click to close!'
     Top = 0
     Width = 640
+    AutoSize = True
+    Center = True
+    Constraints.MinHeight = 240
+    Constraints.MinWidth = 320
     OnClick = Image1Click
     ParentShowHint = False
     Picture.Data = {
@@ -1739,6 +1742,8 @@ object KronoPic: TKronoPic
       5B1C1B2351559507E63A0BE8DE3115D62AE57CC101759BA8D471471B8A59C0B1
       670CBC56DC3D450E1BC7A4D71C40BDB5D43381F4F32EDEC991A6EE0E753FFFD9
     }
+    Proportional = True
     ShowHint = True
+    Stretch = True
   end
 end

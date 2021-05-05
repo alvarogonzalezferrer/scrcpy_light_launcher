@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Release"/>
+    <Units Count="6">
+      <Unit0>
+        <Filename Value="scrcpy_light_launcher.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="47" Y="22"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="form_main"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <TopLine Value="136"/>
+        <CursorPos X="80" Y="141"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="about_form.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="aboutForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="49"/>
+        <CursorPos X="21" Y="53"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="about_pic.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="KronoPic"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="28"/>
+        <CursorPos X="24" Y="43"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="help_form.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="helpForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="22" Y="17"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="2900"/>
+        <CursorPos Y="2911"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit5>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="scrcpy_light_launcher.lpr"/>
+        <Caret Line="22" Column="47"/>
+      </Position1>
+      <Position2>
+        <Filename Value="main.pas"/>
+        <Caret Line="35" Column="43" TopLine="23"/>
+      </Position2>
+      <Position3>
+        <Filename Value="help_form.pas"/>
+        <Caret Line="17" Column="5" TopLine="4"/>
+      </Position3>
+      <Position4>
+        <Filename Value="help_form.pas"/>
+        <Caret Line="25" Column="27" TopLine="11"/>
+      </Position4>
+      <Position5>
+        <Filename Value="help_form.pas"/>
+        <Caret Line="12" Column="3"/>
+      </Position5>
+      <Position6>
+        <Filename Value="help_form.pas"/>
+        <Caret Line="34" TopLine="13"/>
+      </Position6>
+      <Position7>
+        <Filename Value="main.pas"/>
+        <Caret Line="179" Column="19" TopLine="162"/>
+      </Position7>
+      <Position8>
+        <Filename Value="help_form.pas"/>
+        <Caret Column="12"/>
+      </Position8>
+      <Position9>
+        <Filename Value="help_form.pas"/>
+        <Caret Line="25" Column="4" TopLine="13"/>
+      </Position9>
+      <Position10>
+        <Filename Value="main.pas"/>
+        <Caret Line="78" Column="50" TopLine="67"/>
+      </Position10>
+      <Position11>
+        <Filename Value="main.pas"/>
+        <Caret Line="103" Column="31" TopLine="91"/>
+      </Position11>
+      <Position12>
+        <Filename Value="main.pas"/>
+        <Caret Line="97" Column="14" TopLine="85"/>
+      </Position12>
+      <Position13>
+        <Filename Value="main.pas"/>
+        <Caret Line="107" Column="6" TopLine="94"/>
+      </Position13>
+      <Position14>
+        <Filename Value="about_form.pas"/>
+        <Caret Line="64" Column="31" TopLine="19"/>
+      </Position14>
+      <Position15>
+        <Filename Value="about_form.pas"/>
+        <Caret Line="63" Column="31" TopLine="39"/>
+      </Position15>
+      <Position16>
+        <Filename Value="about_form.pas"/>
+        <Caret Line="47" TopLine="39"/>
+      </Position16>
+      <Position17>
+        <Filename Value="main.pas"/>
+        <Caret Line="127" TopLine="108"/>
+      </Position17>
+      <Position18>
+        <Filename Value="main.pas"/>
+        <Caret Line="130" TopLine="110"/>
+      </Position18>
+      <Position19>
+        <Filename Value="main.pas"/>
+        <Caret Line="99" TopLine="86"/>
+      </Position19>
+      <Position20>
+        <Filename Value="main.pas"/>
+        <Caret Line="127" TopLine="116"/>
+      </Position20>
+      <Position21>
+        <Filename Value="main.pas"/>
+        <Caret Line="112" Column="22" TopLine="107"/>
+      </Position21>
+      <Position22>
+        <Filename Value="main.pas"/>
+        <Caret Line="127" TopLine="107"/>
+      </Position22>
+      <Position23>
+        <Filename Value="main.pas"/>
+        <Caret Line="144" TopLine="108"/>
+      </Position23>
+      <Position24>
+        <Filename Value="main.pas"/>
+        <Caret Line="143" Column="108" TopLine="130"/>
+      </Position24>
+      <Position25>
+        <Filename Value="main.pas"/>
+        <Caret Line="144" Column="113" TopLine="124"/>
+      </Position25>
+      <Position26>
+        <Filename Value="main.pas"/>
+        <Caret Line="141" TopLine="124"/>
+      </Position26>
+      <Position27>
+        <Filename Value="main.pas"/>
+        <Caret Line="140" TopLine="124"/>
+      </Position27>
+      <Position28>
+        <Filename Value="about_pic.pas"/>
+        <Caret Line="40" Column="3" TopLine="28"/>
+      </Position28>
+      <Position29>
+        <Filename Value="about_pic.pas"/>
+        <Caret Line="35" Column="3" TopLine="28"/>
+      </Position29>
+      <Position30>
+        <Filename Value="about_form.pas"/>
+        <Caret Line="28" Column="16"/>
+      </Position30>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="main.pas"/>
+        <Line Value="143"/>
+      </Item1>
+    </BreakPoints>
+  </Debugging>
+</CONFIG>

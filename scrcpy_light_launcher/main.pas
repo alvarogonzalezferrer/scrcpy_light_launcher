@@ -94,37 +94,57 @@ implementation
 procedure Tform_main.btn_launchClick(Sender: TObject);
 var
    s : AnsiString; // string return
-   p: array[1..5] of AnsiString; // parameters
+   p: array[1..10] of AnsiString; // parameters
    tmp : AnsiString; // save button caption
+   i: Integer; // iterator
 begin
      // todo init parameters
-     p[1] := '';  // bitrate
-     p[2] := '';  // max size
-     p[3] := '';  // max fps
-     p[4] := '';  // orientation
-     p[5] := '';  // record
+     for i := 1 to 10 do
+         p[i] := '';
 
      if (bitrate_bar.Position > 0) then
-        p[1] := '--bit-rate ' + IntToStr(bitrate_bar.Position) +'M';
+        begin
+          p[1] := '--bit-rate';
+          p[2] := IntToStr(bitrate_bar.Position) +'M';
+        end;
 
      if (check_max_size_vid.Checked) then
-        p[2] := '--max-size ' + combo_max_size_vid.Text;
+        begin
+          p[3] := '--max-size';
+          p[4] := combo_max_size_vid.Text;
+        end;
 
      if (check_max_fps_vid.Checked) then
-        p[3] := '--max-fps ' + combo_max_fps_vid.Text;
+        begin
+             p[5] := '--max-fps';
+             p[6] := combo_max_fps_vid.Text;
+        end;
 
      if (check_video_orientation.Checked) then
-        p[4] := '--lock-video-orientation ' + IntToStr(combo_video_orientation.ItemIndex);
+        begin
+             p[7] := '--lock-video-orientation';
+             p[8] := IntToStr(combo_video_orientation.ItemIndex);
+        end;
 
      if (check_video_recording.Checked) then
-        p[5] := '--record ' + record_filename_video.Text;
+        begin
+             p[9] := '--record';
+             p[10] := record_filename_video.Text;
+        end;
 
      // message while we wait
      tmp := btn_launch.Caption;
      btn_launch.Caption := 'WAITING!';
 
      // run the scrcpy show
-     RunCommand(path_to_scrcpy, p, s);
+
+     // for some reason the try except is NOT WORKING / DEBUG / FIX THIS / TODO
+     try
+        RunCommand(path_to_scrcpy, p, s)
+     except
+           on E: EProcess do
+              Application.MessageBox('Failed to lanch. Configure path first!', 'Failure', MB_ICONERROR + MB_OK);
+     end;
 
      // restore caption
      btn_launch.Caption := tmp;

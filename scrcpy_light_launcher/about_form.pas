@@ -48,7 +48,9 @@ end;
 
 procedure TaboutForm.FormCreate(Sender: TObject);
 begin
-
+  // DEBUG: no funciona bien en cualquier DPI
+  Image1.Width:=140;
+  Image1.Height:=100;
 end;
 
 procedure TaboutForm.Image1Click(Sender: TObject);

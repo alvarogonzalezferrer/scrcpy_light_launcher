@@ -133,8 +133,8 @@
         <Filename Value="help_form.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="helpForm"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="helpForm"/>
       </Unit4>
     </Units>
   </ProjectOptions>
