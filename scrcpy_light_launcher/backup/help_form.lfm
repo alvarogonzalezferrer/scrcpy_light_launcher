@@ -21,6 +21,12 @@ object helpForm: ThelpForm
     Top = 0
     Width = 640
     Anchors = [akTop, akLeft, akRight, akBottom]
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -27
+    Font.Name = 'DejaVu Sans Mono'
+    Font.Pitch = fpFixed
+    Font.Quality = fqAntialiased
     Lines.Strings = (
       'Help'
       '-----'
@@ -59,6 +65,7 @@ object helpForm: ThelpForm
       ''
       'Allow granting permissions and simulating input via USB debugging'
     )
+    ParentFont = False
     ReadOnly = True
     ScrollBars = ssAutoBoth
     TabOrder = 0

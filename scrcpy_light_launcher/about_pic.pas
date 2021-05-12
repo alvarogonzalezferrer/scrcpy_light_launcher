@@ -13,7 +13,6 @@ type
 
   TKronoPic = class(TForm)
     Image1: TImage;
-    procedure FormCreate(Sender: TObject);
     procedure Image1Click(Sender: TObject);
   private
 
@@ -35,10 +34,7 @@ begin
   Close;
 end;
 
-procedure TKronoPic.FormCreate(Sender: TObject);
-begin
 
-end;
 
 end.
 

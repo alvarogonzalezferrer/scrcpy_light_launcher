@@ -1,12 +1,11 @@
 object helpForm: ThelpForm
-  Left = 604
+  Left = 273
   Height = 480
-  Top = 238
+  Top = 123
   Width = 640
   Caption = 'Help'
   ClientHeight = 480
   ClientWidth = 640
-  DesignTimePPI = 192
   Position = poMainFormCenter
   LCLVersion = '2.0.12.0'
   object help_memo: TMemo
@@ -23,7 +22,7 @@ object helpForm: ThelpForm
     Anchors = [akTop, akLeft, akRight, akBottom]
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
-    Font.Height = -27
+    Font.Height = -14
     Font.Name = 'DejaVu Sans Mono'
     Font.Pitch = fpFixed
     Font.Quality = fqAntialiased

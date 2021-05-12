@@ -35,13 +35,7 @@ begin
   Close;
 end;
 
-procedure TKronoPic.FormCreate(Sender: TObject);
-begin
 
-  // error with size
-  TKronoPic.Width:=640;
-  TKronoPic.Height:=480;
-end;
 
 end.
 
