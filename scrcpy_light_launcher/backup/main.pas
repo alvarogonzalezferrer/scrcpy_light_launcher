@@ -137,6 +137,8 @@ begin
      btn_launch.Caption := 'WAITING!';
 
      // run the scrcpy show
+
+     // for some reason the try except is NOT WORKING / DEBUG / FIX THIS / TODO
      try
         RunCommand(path_to_scrcpy, p, s)
      except

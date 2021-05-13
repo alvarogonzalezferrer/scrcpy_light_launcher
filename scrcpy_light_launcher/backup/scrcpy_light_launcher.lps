@@ -41,10 +41,12 @@
         <ComponentName Value="KronoPic"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="25"/>
-        <CursorPos Y="38"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="8"/>
+        <CursorPos X="20" Y="15"/>
         <UsageCount Value="23"/>
+        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="help_form.pas"/>
@@ -52,7 +54,6 @@
         <ComponentName Value="helpForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <CursorPos X="22" Y="17"/>
         <UsageCount Value="23"/>
@@ -67,7 +68,7 @@
         <UsageCount Value="10"/>
       </Unit5>
     </Units>
-    <JumpHistory Count="22" HistoryIndex="21">
+    <JumpHistory Count="24" HistoryIndex="23">
       <Position1>
         <Filename Value="help_form.pas"/>
         <Caret Line="17" Column="5" TopLine="4"/>
@@ -156,6 +157,14 @@
         <Filename Value="main.pas"/>
         <Caret Line="140" TopLine="124"/>
       </Position22>
+      <Position23>
+        <Filename Value="help_form.pas"/>
+        <Caret Line="17" Column="22"/>
+      </Position23>
+      <Position24>
+        <Filename Value="about_pic.pas"/>
+        <Caret Line="16" Column="15" TopLine="8"/>
+      </Position24>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
