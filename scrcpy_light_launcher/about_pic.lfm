@@ -17,8 +17,7 @@ object KronoPic: TKronoPic
     Hint = 'Krono from Argentina, to the world!'#13#10#13#10'Click to close!'
     Top = 0
     Width = 640
-    AutoSize = True
-    Center = True
+    Anchors = []
     Constraints.MinHeight = 240
     Constraints.MinWidth = 320
     OnClick = Image1Click
