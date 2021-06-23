@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="47" Y="22"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="85"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -21,7 +21,7 @@
         <IsVisibleTab Value="True"/>
         <TopLine Value="136"/>
         <CursorPos X="80" Y="141"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="85"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -34,7 +34,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="49"/>
         <CursorPos X="21" Y="53"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="85"/>
       </Unit2>
       <Unit3>
         <Filename Value="about_pic.pas"/>
@@ -45,8 +45,9 @@
         <EditorIndex Value="2"/>
         <TopLine Value="8"/>
         <CursorPos X="20" Y="15"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="85"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="help_form.pas"/>
@@ -56,7 +57,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="1"/>
         <CursorPos X="22" Y="17"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="85"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit4>
@@ -65,7 +66,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="2827"/>
         <CursorPos Y="2911"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="4"/>
       </Unit5>
     </Units>
     <JumpHistory Count="24" HistoryIndex="23">

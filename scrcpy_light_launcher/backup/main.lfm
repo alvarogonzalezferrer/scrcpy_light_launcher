@@ -1,14 +1,13 @@
 object form_main: Tform_main
-  Left = 644
-  Height = 390
-  Top = 234
-  Width = 640
+  Left = 259
+  Height = 261
+  Top = 121
+  Width = 320
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Scrcpy light launcher'
-  ClientHeight = 351
-  ClientWidth = 640
-  DesignTimePPI = 192
+  ClientHeight = 241
+  ClientWidth = 320
   Icon.Data = {
     EEB001000000010006000000000001002000802B000066000000808000000100
     200028080100E62B00004040000001002000284200000E340100303000000100
@@ -3482,80 +3481,83 @@ object form_main: Tform_main
   LCLVersion = '2.0.12.0'
   object btn_launch: TButton
     AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = groupVideo
+    AnchorSideTop.Control = groupParameters
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
-    Left = 10
-    Height = 51
-    Top = 290
-    Width = 615
+    Left = 5
+    Height = 39
+    Top = 197
+    Width = 307
     Anchors = [akTop, akLeft, akRight, akBottom]
-    BorderSpacing.Left = 10
-    BorderSpacing.Top = 10
-    BorderSpacing.Right = 15
-    BorderSpacing.Bottom = 10
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 8
+    BorderSpacing.Bottom = 5
     Caption = 'Launch'
     Font.Style = [fsBold]
     OnClick = btn_launchClick
     ParentFont = False
     TabOrder = 0
   end
-  object groupVideo: TGroupBox
-    Left = -2
-    Height = 280
+  object groupParameters: TGroupBox
+    Left = -1
+    Height = 192
     Top = 0
-    Width = 632
+    Width = 316
     Caption = 'Video'
-    ClientHeight = 243
-    ClientWidth = 628
+    ClientHeight = 172
+    ClientWidth = 312
     ParentColor = False
+    ParentFont = False
     TabOrder = 1
     object bitrate_label: TLabel
-      AnchorSideLeft.Control = groupVideo
-      AnchorSideTop.Control = groupVideo
-      Left = 5
-      Height = 32
-      Top = 6
-      Width = 151
-      BorderSpacing.Left = 5
-      BorderSpacing.Top = 6
+      AnchorSideLeft.Control = groupParameters
+      AnchorSideTop.Control = groupParameters
+      Left = 2
+      Height = 15
+      Top = 3
+      Width = 74
+      BorderSpacing.Left = 2
+      BorderSpacing.Top = 3
       Caption = 'Bitrate default'
       ParentColor = False
+      ParentFont = False
       ParentShowHint = False
     end
     object bitrate_bar: TTrackBar
       AnchorSideLeft.Control = bitrate_label
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = bitrate_label
-      Left = 181
-      Height = 50
+      Left = 88
+      Height = 25
       Hint = 'Video Bitrate'
-      Top = 6
-      Width = 382
+      Top = 3
+      Width = 191
       OnChange = bitrate_barChange
       Position = 0
-      BorderSpacing.Left = 25
+      BorderSpacing.Left = 12
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 0
     end
     object check_max_size_vid: TCheckBox
-      AnchorSideLeft.Control = groupVideo
+      AnchorSideLeft.Control = groupParameters
       AnchorSideTop.Control = bitrate_label
       AnchorSideTop.Side = asrBottom
-      Left = 10
-      Height = 36
+      Left = 5
+      Height = 19
       Hint = 'Sometimes, it is useful to mirror an Android device at a lower definition to increase performance.'#13#10#13#10'The other dimension is computed to that the device aspect ratio is preserved.'
-      Top = 48
-      Width = 128
-      BorderSpacing.Left = 10
-      BorderSpacing.Top = 10
+      Top = 23
+      Width = 65
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
       Caption = 'Max size'
       OnChange = check_max_size_vidChange
+      ParentFont = False
       TabOrder = 1
     end
     object combo_max_size_vid: TComboBox
@@ -3563,14 +3565,14 @@ object form_main: Tform_main
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = check_max_size_vid
       AnchorSideTop.Side = asrCenter
-      Left = 177
-      Height = 40
+      Left = 90
+      Height = 23
       Hint = 'Sometimes, it is useful to mirror an Android device at a lower definition to increase performance.'#13#10#13#10'The other dimension is computed to that the device aspect ratio is preserved.'#13#10#13#10'You can type a custom resolution in pixels here.'
-      Top = 46
-      Width = 256
-      BorderSpacing.Left = 10
+      Top = 21
+      Width = 128
+      BorderSpacing.Left = 5
       Enabled = False
-      ItemHeight = 32
+      ItemHeight = 15
       ItemIndex = 4
       Items.Strings = (
         '240'
@@ -3586,24 +3588,26 @@ object form_main: Tform_main
         '2048'
         '4096'
       )
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 2
       Text = '720'
     end
     object check_max_fps_vid: TCheckBox
-      AnchorSideLeft.Control = groupVideo
+      AnchorSideLeft.Control = groupParameters
       AnchorSideTop.Control = check_max_size_vid
       AnchorSideTop.Side = asrBottom
-      Left = 10
-      Height = 36
+      Left = 5
+      Height = 19
       Hint = 'capture frame rate can be limited'
-      Top = 94
-      Width = 126
-      BorderSpacing.Left = 10
-      BorderSpacing.Top = 10
+      Top = 47
+      Width = 65
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
       Caption = 'Max FPS'
       OnChange = check_max_fps_vidChange
+      ParentFont = False
       TabOrder = 3
     end
     object combo_max_fps_vid: TComboBox
@@ -3611,14 +3615,14 @@ object form_main: Tform_main
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = check_max_fps_vid
       AnchorSideTop.Side = asrCenter
-      Left = 177
-      Height = 40
+      Left = 90
+      Height = 23
       Hint = 'Max FPS in video'
-      Top = 92
-      Width = 256
-      BorderSpacing.Left = 10
+      Top = 45
+      Width = 128
+      BorderSpacing.Left = 5
       Enabled = False
-      ItemHeight = 32
+      ItemHeight = 15
       ItemIndex = 3
       Items.Strings = (
         '5'
@@ -3629,6 +3633,7 @@ object form_main: Tform_main
         '90'
         '120'
       )
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
       Style = csDropDownList
@@ -3636,18 +3641,19 @@ object form_main: Tform_main
       Text = '30'
     end
     object check_video_orientation: TCheckBox
-      AnchorSideLeft.Control = groupVideo
+      AnchorSideLeft.Control = groupParameters
       AnchorSideTop.Control = combo_max_fps_vid
       AnchorSideTop.Side = asrBottom
-      Left = 10
-      Height = 36
+      Left = 5
+      Height = 19
       Hint = 'Video orientation'
-      Top = 142
-      Width = 157
-      BorderSpacing.Left = 10
-      BorderSpacing.Top = 10
+      Top = 73
+      Width = 80
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
       Caption = 'Orientation'
       OnChange = check_video_orientationChange
+      ParentFont = False
       TabOrder = 5
     end
     object combo_video_orientation: TComboBox
@@ -3655,14 +3661,14 @@ object form_main: Tform_main
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = check_video_orientation
       AnchorSideTop.Side = asrCenter
-      Left = 177
-      Height = 40
+      Left = 90
+      Height = 23
       Hint = 'Video orientation'
-      Top = 140
-      Width = 256
-      BorderSpacing.Left = 10
+      Top = 71
+      Width = 128
+      BorderSpacing.Left = 5
       Enabled = False
-      ItemHeight = 32
+      ItemHeight = 15
       ItemIndex = 0
       Items.Strings = (
         'Natural orientation'
@@ -3670,6 +3676,7 @@ object form_main: Tform_main
         '180°'
         '90° clockwise'
       )
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
       Style = csDropDownList
@@ -3677,39 +3684,73 @@ object form_main: Tform_main
       Text = 'Natural orientation'
     end
     object check_video_recording: TCheckBox
-      AnchorSideLeft.Control = groupVideo
+      AnchorSideLeft.Control = groupParameters
       AnchorSideTop.Control = check_video_orientation
       AnchorSideTop.Side = asrBottom
-      Left = 10
-      Height = 36
+      Left = 5
+      Height = 19
       Hint = 'Recording'
-      Top = 188
-      Width = 110
-      BorderSpacing.Left = 10
-      BorderSpacing.Top = 10
+      Top = 97
+      Width = 57
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
       Caption = 'Record'
       OnChange = check_video_recordingChange
+      ParentFont = False
       TabOrder = 7
     end
     object record_filename_video: TEdit
       AnchorSideLeft.Control = combo_video_orientation
       AnchorSideTop.Control = combo_video_orientation
       AnchorSideTop.Side = asrBottom
-      Left = 177
-      Height = 40
+      Left = 90
+      Height = 23
       Hint = 'File to record the video'
-      Top = 184
-      Width = 439
-      BorderSpacing.Top = 4
+      Top = 96
+      Width = 220
+      BorderSpacing.Top = 2
       Enabled = False
       OnClick = record_filename_videoClick
+      ParentFont = False
       TabOrder = 8
       TextHint = 'File to record the video'
     end
+    object check_full_screen: TCheckBox
+      AnchorSideLeft.Control = groupParameters
+      AnchorSideTop.Control = check_video_recording
+      AnchorSideTop.Side = asrBottom
+      Left = 5
+      Height = 19
+      Hint = 'The app may be started directly in fullscreen'
+      Top = 121
+      Width = 73
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
+      Caption = 'Fullscreen'
+      OnChange = check_video_recordingChange
+      ParentFont = False
+      TabOrder = 9
+    end
+    object check_alwas_on_top: TCheckBox
+      AnchorSideLeft.Control = groupParameters
+      AnchorSideTop.Control = check_full_screen
+      AnchorSideTop.Side = asrBottom
+      Left = 5
+      Height = 19
+      Hint = 'To keep the scrcpy window always on top'
+      Top = 145
+      Width = 95
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
+      Caption = 'Always on top'
+      OnChange = check_video_recordingChange
+      ParentFont = False
+      TabOrder = 10
+    end
   end
   object menu_main1: TMainMenu
-    Left = 536
-    Top = 16
+    Left = 268
+    Top = 8
     object menu_menu: TMenuItem
       Caption = '&Menu'
       object menu_help: TMenuItem
@@ -3738,13 +3779,13 @@ object form_main: Tform_main
     DefaultExt = '.mp4'
     FileName = 'android_record'
     Filter = 'Video|*.mp4;*.mkv|All files|*.*'
-    Left = 424
-    Top = 16
+    Left = 212
+    Top = 8
   end
   object select_scrcpy_exe_dialog: TOpenDialog
     Title = 'Select SCRCPY executable file'
     Filter = 'Scrcpy|scrcpy.exe|All exe|*.exe'
-    Left = 480
-    Top = 16
+    Left = 240
+    Top = 8
   end
 end

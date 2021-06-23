@@ -1,12 +1,12 @@
 object form_main: Tform_main
   Left = 259
-  Height = 195
+  Height = 261
   Top = 121
   Width = 320
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Scrcpy light launcher'
-  ClientHeight = 175
+  ClientHeight = 241
   ClientWidth = 320
   Icon.Data = {
     EEB001000000010006000000000001002000802B000066000000808000000100
@@ -3481,15 +3481,15 @@ object form_main: Tform_main
   LCLVersion = '2.0.12.0'
   object btn_launch: TButton
     AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = groupVideo
+    AnchorSideTop.Control = groupParameters
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 5
-    Height = 25
-    Top = 145
+    Height = 39
+    Top = 197
     Width = 307
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Left = 5
@@ -3502,20 +3502,21 @@ object form_main: Tform_main
     ParentFont = False
     TabOrder = 0
   end
-  object groupVideo: TGroupBox
+  object groupParameters: TGroupBox
     Left = -1
-    Height = 140
+    Height = 192
+    Hint = 'Set parameters here'
     Top = 0
     Width = 316
     Caption = 'Video'
-    ClientHeight = 120
+    ClientHeight = 172
     ClientWidth = 312
     ParentColor = False
     ParentFont = False
     TabOrder = 1
     object bitrate_label: TLabel
-      AnchorSideLeft.Control = groupVideo
-      AnchorSideTop.Control = groupVideo
+      AnchorSideLeft.Control = groupParameters
+      AnchorSideTop.Control = groupParameters
       Left = 2
       Height = 15
       Top = 3
@@ -3545,7 +3546,7 @@ object form_main: Tform_main
       TabOrder = 0
     end
     object check_max_size_vid: TCheckBox
-      AnchorSideLeft.Control = groupVideo
+      AnchorSideLeft.Control = groupParameters
       AnchorSideTop.Control = bitrate_label
       AnchorSideTop.Side = asrBottom
       Left = 5
@@ -3595,7 +3596,7 @@ object form_main: Tform_main
       Text = '720'
     end
     object check_max_fps_vid: TCheckBox
-      AnchorSideLeft.Control = groupVideo
+      AnchorSideLeft.Control = groupParameters
       AnchorSideTop.Control = check_max_size_vid
       AnchorSideTop.Side = asrBottom
       Left = 5
@@ -3641,7 +3642,7 @@ object form_main: Tform_main
       Text = '30'
     end
     object check_video_orientation: TCheckBox
-      AnchorSideLeft.Control = groupVideo
+      AnchorSideLeft.Control = groupParameters
       AnchorSideTop.Control = combo_max_fps_vid
       AnchorSideTop.Side = asrBottom
       Left = 5
@@ -3684,7 +3685,7 @@ object form_main: Tform_main
       Text = 'Natural orientation'
     end
     object check_video_recording: TCheckBox
-      AnchorSideLeft.Control = groupVideo
+      AnchorSideLeft.Control = groupParameters
       AnchorSideTop.Control = check_video_orientation
       AnchorSideTop.Side = asrBottom
       Left = 5
@@ -3714,6 +3715,38 @@ object form_main: Tform_main
       ParentFont = False
       TabOrder = 8
       TextHint = 'File to record the video'
+    end
+    object check_full_screen: TCheckBox
+      AnchorSideLeft.Control = groupParameters
+      AnchorSideTop.Control = check_video_recording
+      AnchorSideTop.Side = asrBottom
+      Left = 5
+      Height = 19
+      Hint = 'The app may be started directly in fullscreen'
+      Top = 121
+      Width = 73
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
+      Caption = 'Fullscreen'
+      OnChange = check_video_recordingChange
+      ParentFont = False
+      TabOrder = 9
+    end
+    object check_alwas_on_top: TCheckBox
+      AnchorSideLeft.Control = groupParameters
+      AnchorSideTop.Control = check_full_screen
+      AnchorSideTop.Side = asrBottom
+      Left = 5
+      Height = 19
+      Hint = 'To keep the scrcpy window always on top'
+      Top = 145
+      Width = 95
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
+      Caption = 'Always on top'
+      OnChange = check_video_recordingChange
+      ParentFont = False
+      TabOrder = 10
     end
   end
   object menu_main1: TMainMenu

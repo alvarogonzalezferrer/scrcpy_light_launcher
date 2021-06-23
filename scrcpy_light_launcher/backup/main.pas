@@ -41,17 +41,19 @@ type
   Tform_main = class(TForm)
     btn_launch: TButton;
     bitrate_label: TLabel;
+    check_alwas_on_top: TCheckBox;
     check_video_orientation: TCheckBox;
     check_max_size_vid: TCheckBox;
     check_max_fps_vid: TCheckBox;
     check_video_recording: TCheckBox;
+    check_full_screen: TCheckBox;
     combo_video_orientation: TComboBox;
     combo_max_size_vid: TComboBox;
     combo_max_fps_vid: TComboBox;
     menu_help: TMenuItem;
     select_scrcpy_exe_dialog: TOpenDialog;
     record_filename_video: TEdit;
-    groupVideo: TGroupBox;
+    groupParameters: TGroupBox;
     menu_main1: TMainMenu;
     menu_menu: TMenuItem;
     menu_config: TMenuItem;
@@ -94,12 +96,12 @@ implementation
 procedure Tform_main.btn_launchClick(Sender: TObject);
 var
    s : AnsiString; // string return
-   p: array[1..10] of AnsiString; // parameters
+   p: array[1..50] of AnsiString; // parameters
    tmp : AnsiString; // save button caption
    i: Integer; // iterator
 begin
      // todo init parameters
-     for i := 1 to 10 do
+     for i := 1 to 50 do
          p[i] := '';
 
      if (bitrate_bar.Position > 0) then
@@ -130,6 +132,16 @@ begin
         begin
              p[9] := '--record';
              p[10] := record_filename_video.Text;
+        end;
+
+     if (check_full_screen.Checked) then
+        begin
+             p[11] := '--fullscreen';
+        end;
+
+     if (check_alwas_on_top.Checked) then
+        begin
+             p[12] := '--always-on-top';
         end;
 
      // message while we wait
