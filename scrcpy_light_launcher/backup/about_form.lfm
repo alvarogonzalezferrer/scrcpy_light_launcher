@@ -1,14 +1,13 @@
 object aboutForm: TaboutForm
   Left = 494
-  Height = 480
+  Height = 240
   Top = 238
-  Width = 700
+  Width = 350
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'About...'
-  ClientHeight = 480
-  ClientWidth = 700
-  DesignTimePPI = 192
+  ClientHeight = 240
+  ClientWidth = 350
   OnClick = FormClick
   OnCreate = FormCreate
   Position = poMainFormCenter
@@ -17,15 +16,15 @@ object aboutForm: TaboutForm
     AnchorSideLeft.Control = Image1
     AnchorSideLeft.Side = asrBottom
     AnchorSideTop.Control = Owner
-    Left = 226
-    Height = 185
-    Top = 16
-    Width = 364
+    Left = 153
+    Height = 95
+    Top = 8
+    Width = 190
     Alignment = taCenter
-    BorderSpacing.Left = 16
-    BorderSpacing.Top = 16
+    BorderSpacing.Left = 8
+    BorderSpacing.Top = 8
     Caption = 'scrcpy light launcher'#13#10'v 0.28.04.2021 beta'#13#10'By Alvaro "Krono" Gonzalez'#13#10'Copyright (C) 2021'#13#10'In loving memory of my father.'
-    Font.Height = -27
+    Font.Height = -14
     ParentColor = False
     ParentFont = False
     OnClick = Label1Click
@@ -36,15 +35,14 @@ object aboutForm: TaboutForm
     AnchorSideTop.Control = Label1
     AnchorSideTop.Side = asrBottom
     Cursor = crHandPoint
-    Left = 60
-    Height = 45
-    Top = 213
-    Width = 581
-    BorderSpacing.Left = 1
-    BorderSpacing.Top = 12
+    Left = 27
+    Height = 21
+    Top = 109
+    Width = 296
+    BorderSpacing.Top = 6
     Caption = 'https://alvarogonzalezferrer.github.io/'
     Font.Color = clBlue
-    Font.Height = -32
+    Font.Height = -16
     Font.Style = [fsBold, fsUnderline]
     ParentColor = False
     ParentFont = False
@@ -59,15 +57,15 @@ object aboutForm: TaboutForm
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
-    Left = 11
-    Height = 202
-    Top = 268
-    Width = 679
+    Left = 5
+    Height = 100
+    Top = 135
+    Width = 340
     Anchors = [akTop, akLeft, akRight, akBottom]
-    BorderSpacing.Left = 10
-    BorderSpacing.Top = 10
-    BorderSpacing.Right = 10
-    BorderSpacing.Bottom = 10
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 5
+    BorderSpacing.Bottom = 5
     Lines.Strings = (
       'Released under the MIT license.'
       ''
@@ -79,15 +77,15 @@ object aboutForm: TaboutForm
       ''
       'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.'
     )
+    ParentFont = False
     ScrollBars = ssAutoVertical
     TabOrder = 0
   end
   object Image1: TImage
-    Left = 10
-    Height = 200
-    Top = 10
-    Width = 200
-    AutoSize = True
+    Left = 5
+    Height = 100
+    Top = 5
+    Width = 140
     Center = True
     OnClick = Image1Click
     Picture.Data = {
