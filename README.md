@@ -6,6 +6,8 @@ scrcpy is a free and open-source screen mirroring application that allows contro
 
 # What is this
 
+![Screenshoot](screenshoots/screen01.jpg)
+
 This is a easy to use light launcher to control your android phone from a desktop PC.
 
 I did this launcher because all the other tools were paid, or command line, or hard to use.
