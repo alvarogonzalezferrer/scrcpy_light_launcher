@@ -18,12 +18,13 @@ object aboutForm: TaboutForm
     AnchorSideTop.Control = Owner
     Left = 153
     Height = 95
+    Hint = 'The best developer! Hire me!'
     Top = 8
     Width = 190
     Alignment = taCenter
     BorderSpacing.Left = 8
     BorderSpacing.Top = 8
-    Caption = 'scrcpy light launcher'#13#10'v 0.28.04.2021 beta'#13#10'By Alvaro "Krono" Gonzalez'#13#10'Copyright (C) 2021'#13#10'In loving memory of my father.'
+    Caption = 'scrcpy light launcher'#13#10'v 0.24.07.2021'#13#10'By Alvaro "Krono" Gonzalez'#13#10'Copyright (C) 2021'#13#10'In loving memory of my father.'
     Font.Height = -14
     ParentColor = False
     ParentFont = False

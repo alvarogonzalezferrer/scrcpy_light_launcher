@@ -22,10 +22,11 @@ object helpForm: ThelpForm
     Anchors = [akTop, akLeft, akRight, akBottom]
     Font.CharSet = ANSI_CHARSET
     Font.Color = clBlack
-    Font.Height = -14
+    Font.Height = -15
     Font.Name = 'DejaVu Sans Mono'
     Font.Pitch = fpFixed
-    Font.Quality = fqAntialiased
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
     Lines.Strings = (
       'Help'
       '-----'

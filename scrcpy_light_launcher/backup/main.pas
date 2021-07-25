@@ -42,6 +42,7 @@ type
     btn_launch: TButton;
     bitrate_label: TLabel;
     check_alwas_on_top: TCheckBox;
+    check_stay_awake: TCheckBox;
     check_video_orientation: TCheckBox;
     check_max_size_vid: TCheckBox;
     check_max_fps_vid: TCheckBox;
@@ -142,6 +143,11 @@ begin
      if (check_alwas_on_top.Checked) then
         begin
              p[12] := '--always-on-top';
+        end;
+
+     if (check_stay_awake.Checked) then
+        begin
+             p[13] := '--stay-awake';
         end;
 
      // message while we wait

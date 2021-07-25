@@ -1,12 +1,12 @@
 object form_main: Tform_main
   Left = 259
-  Height = 261
+  Height = 295
   Top = 121
   Width = 320
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Scrcpy light launcher'
-  ClientHeight = 241
+  ClientHeight = 275
   ClientWidth = 320
   Icon.Data = {
     EEB001000000010006000000000001002000802B000066000000808000000100
@@ -3488,8 +3488,9 @@ object form_main: Tform_main
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 5
-    Height = 39
-    Top = 197
+    Height = 57
+    Hint = 'Launch the display'
+    Top = 213
     Width = 307
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Left = 5
@@ -3500,25 +3501,30 @@ object form_main: Tform_main
     Font.Style = [fsBold]
     OnClick = btn_launchClick
     ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 0
   end
   object groupParameters: TGroupBox
     Left = -1
-    Height = 192
+    Height = 208
     Hint = 'Set parameters here'
     Top = 0
     Width = 316
     Caption = 'Video'
-    ClientHeight = 172
+    ClientHeight = 188
     ClientWidth = 312
     ParentColor = False
     ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 1
     object bitrate_label: TLabel
       AnchorSideLeft.Control = groupParameters
       AnchorSideTop.Control = groupParameters
       Left = 2
       Height = 15
+      Hint = 'Video bitrate of display'
       Top = 3
       Width = 74
       BorderSpacing.Left = 2
@@ -3527,6 +3533,7 @@ object form_main: Tform_main
       ParentColor = False
       ParentFont = False
       ParentShowHint = False
+      ShowHint = True
     end
     object bitrate_bar: TTrackBar
       AnchorSideLeft.Control = bitrate_label
@@ -3559,6 +3566,8 @@ object form_main: Tform_main
       Caption = 'Max size'
       OnChange = check_max_size_vidChange
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 1
     end
     object combo_max_size_vid: TComboBox
@@ -3609,6 +3618,8 @@ object form_main: Tform_main
       Caption = 'Max FPS'
       OnChange = check_max_fps_vidChange
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 3
     end
     object combo_max_fps_vid: TComboBox
@@ -3655,6 +3666,8 @@ object form_main: Tform_main
       Caption = 'Orientation'
       OnChange = check_video_orientationChange
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 5
     end
     object combo_video_orientation: TComboBox
@@ -3690,7 +3703,7 @@ object form_main: Tform_main
       AnchorSideTop.Side = asrBottom
       Left = 5
       Height = 19
-      Hint = 'Recording'
+      Hint = 'Recording video?'
       Top = 97
       Width = 57
       BorderSpacing.Left = 5
@@ -3698,6 +3711,8 @@ object form_main: Tform_main
       Caption = 'Record'
       OnChange = check_video_recordingChange
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 7
     end
     object record_filename_video: TEdit
@@ -3730,6 +3745,8 @@ object form_main: Tform_main
       Caption = 'Fullscreen'
       OnChange = check_video_recordingChange
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 9
     end
     object check_alwas_on_top: TCheckBox
@@ -3746,7 +3763,29 @@ object form_main: Tform_main
       Caption = 'Always on top'
       OnChange = check_video_recordingChange
       ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
       TabOrder = 10
+    end
+    object check_stay_awake: TCheckBox
+      AnchorSideLeft.Control = groupParameters
+      AnchorSideTop.Control = check_alwas_on_top
+      AnchorSideTop.Side = asrBottom
+      Left = 5
+      Height = 19
+      Hint = 'Prevent the device to sleep after some delay when the device is plugged in. Keeps the device screen always on.'
+      Top = 169
+      Width = 78
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
+      Caption = 'Stay awake'
+      Checked = True
+      OnChange = check_video_recordingChange
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      State = cbChecked
+      TabOrder = 11
     end
   end
   object menu_main1: TMainMenu
