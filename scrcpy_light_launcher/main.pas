@@ -156,6 +156,9 @@ begin
 
      // run the scrcpy show
 
+     // minimize this application window
+     Application.Minimize;
+
      // for some reason the try except is NOT WORKING / DEBUG / FIX THIS / TODO
      try
         RunCommand(path_to_scrcpy, p, s)
@@ -163,6 +166,9 @@ begin
            on E: EProcess do
               Application.MessageBox('Failed to lanch. Configure path first!', 'Failure', MB_ICONERROR + MB_OK);
      end;
+
+     // restore window
+     Application.Restore;
 
      // restore caption
      btn_launch.Caption := tmp;

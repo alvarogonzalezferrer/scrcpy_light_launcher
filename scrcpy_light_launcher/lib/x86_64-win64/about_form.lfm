@@ -24,7 +24,7 @@ object aboutForm: TaboutForm
     Alignment = taCenter
     BorderSpacing.Left = 8
     BorderSpacing.Top = 8
-    Caption = 'scrcpy light launcher'#13#10'v 0.24.07.2021'#13#10'By Alvaro "Krono" Gonzalez'#13#10'Copyright (C) 2021'#13#10'In loving memory of my father.'
+    Caption = 'scrcpy light launcher'#13#10'v 28.10.2021'#13#10'By Alvaro "Krono" Gonzalez'#13#10'Copyright (C) 2021'#13#10'In loving memory of my father.'
     Font.Height = -14
     ParentColor = False
     ParentFont = False

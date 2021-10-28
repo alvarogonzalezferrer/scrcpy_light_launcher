@@ -28,6 +28,8 @@ object aboutForm: TaboutForm
     Font.Height = -14
     ParentColor = False
     ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
     OnClick = Label1Click
   end
   object Label2: TLabel
