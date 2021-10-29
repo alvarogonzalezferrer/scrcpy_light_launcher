@@ -28,7 +28,7 @@ This application provides display and control of Android devices connected on US
 
 For Windows 64 bits, I provided a installer, easy to use.
 
-Just download and run.
+Just download and run it.
 
 # Who am I?
 
