@@ -18,6 +18,10 @@ I don't like bloated apps that depend on a million libraries to do simple things
 
 ![Screenshoot](screenshoots/screen02.jpg)
 
+# License 
+
+[Read the license to use here.](LICENSE.md)
+
 # How to use
 
 Download one of the releases pre-compiled for your system.
