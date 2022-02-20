@@ -46,7 +46,7 @@ Section "Scrcpy light launcher (required)"
 	File "bin\" *.*
   
   ; Write the installation path into the registry
-  WriteRegStr HKLM SOFTWARE\NSIS_Example2 "Install_Dir" "$INSTDIR"
+  WriteRegStr HKLM SOFTWARE\scrcpy_light_launcher "Install_Dir" "$INSTDIR"
   
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\scrcpy_light_launcher" "DisplayName" "scrcpy_light_launcher"
