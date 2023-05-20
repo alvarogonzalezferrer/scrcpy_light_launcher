@@ -37,6 +37,13 @@ UninstPage instfiles
 
 ;--------------------------------
 
+;---- Uninstall previous version ----
+; The "" makes the section hidden.
+Section "" SecUninstallPrevious
+    Call UninstallPrevious
+SectionEnd
+
+
 ; The stuff to install
 Section "Scrcpy light launcher (required)"
 
@@ -73,18 +80,11 @@ Section "Start Menu Shortcuts"
 
 SectionEnd
 
-;---- Uninstall previous version ----
-; The "" makes the section hidden.
-Section "" SecUninstallPrevious
-
-    Call UninstallPrevious
-
-SectionEnd
-
+; helper to uninstall previous versions
 Function UninstallPrevious
 
     ; Check for uninstaller.
-    ReadRegStr $R0 HKLM Software\scrcpy_light_launcher "InstallDir"
+    ReadRegStr $R0 HKLM Software\scrcpy_light_launcher "Install_Dir"
 
     ${If} $R0 == "" 
 		DetailPrint "No previous installation detected." 	
