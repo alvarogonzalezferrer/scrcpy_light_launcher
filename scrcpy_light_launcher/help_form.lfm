@@ -7,7 +7,7 @@ object helpForm: ThelpForm
   ClientHeight = 480
   ClientWidth = 640
   Position = poMainFormCenter
-  LCLVersion = '2.0.12.0'
+  LCLVersion = '2.2.6.0'
   object help_memo: TMemo
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
@@ -57,7 +57,7 @@ object helpForm: ThelpForm
       ''
       'MOUSE AND KEYBOARD:'
       ''
-      'If Mouse and keyboard do not work:'
+      'If mouse and keyboard does not work:'
       ''
       'On some devices, you may need to enable an option to allow simulating input. In developer options, enable:'
       ''

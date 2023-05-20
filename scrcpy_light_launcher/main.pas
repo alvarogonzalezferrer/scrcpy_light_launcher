@@ -5,7 +5,7 @@ by Alvaro 'krono' Gonzalez Ferrer
 
 https://alvarogonzalezferrer.github.io/
 
-Copyright (c) 2021
+Copyright (c) 2021-2023
 
 In loving memory of my father.
 
@@ -42,7 +42,10 @@ type
     btn_launch: TButton;
     bitrate_label: TLabel;
     check_alwas_on_top: TCheckBox;
+    check_turn_screen_off: TCheckBox;
     check_stay_awake: TCheckBox;
+    check_audio: TCheckBox;
+    check_power_off: TCheckBox;
     check_video_orientation: TCheckBox;
     check_max_size_vid: TCheckBox;
     check_max_fps_vid: TCheckBox;
@@ -125,8 +128,8 @@ begin
 
      if (check_video_orientation.Checked) then
         begin
-             p[7] := '--lock-video-orientation';
-             p[8] := IntToStr(combo_video_orientation.ItemIndex);
+            p[7] := '--lock-video-orientation='+IntToStr(combo_video_orientation.ItemIndex);
+            // p[8] := IntToStr(combo_video_orientation.ItemIndex);
         end;
 
      if (check_video_recording.Checked) then
@@ -148,6 +151,21 @@ begin
      if (check_stay_awake.Checked) then
         begin
              p[13] := '--stay-awake';
+        end;
+
+     if not (check_audio.Checked) then
+        begin
+             p[14] := '--no-audio';
+        end;
+
+     if (check_turn_screen_off.Checked) then
+        begin
+             p[15] := '--turn-screen-off';
+        end;
+
+     if (check_power_off.Checked) then
+        begin
+             p[16] := '--power-off-on-close';
         end;
 
      // message while we wait

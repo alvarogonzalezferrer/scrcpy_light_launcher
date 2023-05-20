@@ -1,12 +1,12 @@
 object form_main: Tform_main
   Left = 259
-  Height = 295
+  Height = 350
   Top = 121
   Width = 320
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Scrcpy light launcher'
-  ClientHeight = 275
+  ClientHeight = 330
   ClientWidth = 320
   Icon.Data = {
     EEB001000000010006000000000001002000802B000066000000808000000100
@@ -3478,7 +3478,7 @@ object form_main: Tform_main
   OnClose = FormClose
   OnCreate = FormCreate
   Position = poDesktopCenter
-  LCLVersion = '2.0.12.0'
+  LCLVersion = '2.2.6.0'
   object btn_launch: TButton
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = groupParameters
@@ -3488,9 +3488,9 @@ object form_main: Tform_main
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 5
-    Height = 57
+    Height = 40
     Hint = 'Launch the display'
-    Top = 213
+    Top = 285
     Width = 307
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Left = 5
@@ -3507,12 +3507,12 @@ object form_main: Tform_main
   end
   object groupParameters: TGroupBox
     Left = -1
-    Height = 208
+    Height = 280
     Hint = 'Set parameters here'
     Top = 0
     Width = 316
     Caption = 'Video'
-    ClientHeight = 188
+    ClientHeight = 260
     ClientWidth = 312
     ParentColor = False
     ParentFont = False
@@ -3786,6 +3786,60 @@ object form_main: Tform_main
       ShowHint = True
       State = cbChecked
       TabOrder = 11
+    end
+    object check_audio: TCheckBox
+      AnchorSideLeft.Control = groupParameters
+      AnchorSideTop.Control = check_stay_awake
+      AnchorSideTop.Side = asrBottom
+      Left = 5
+      Height = 19
+      Hint = 'Audio forwarding from device'
+      Top = 193
+      Width = 113
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
+      Caption = 'Audio forwarding'
+      OnChange = check_video_recordingChange
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 12
+    end
+    object check_turn_screen_off: TCheckBox
+      AnchorSideLeft.Control = groupParameters
+      AnchorSideTop.Control = check_audio
+      AnchorSideTop.Side = asrBottom
+      Left = 5
+      Height = 19
+      Hint = 'Turn the device screen off while mirroring'
+      Top = 217
+      Width = 183
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
+      Caption = 'Turn screen off while mirroring'
+      OnChange = check_video_recordingChange
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 13
+    end
+    object check_power_off: TCheckBox
+      AnchorSideLeft.Control = groupParameters
+      AnchorSideTop.Control = check_turn_screen_off
+      AnchorSideTop.Side = asrBottom
+      Left = 5
+      Height = 19
+      Hint = 'To turn the device screen off when closing'
+      Top = 241
+      Width = 118
+      BorderSpacing.Left = 5
+      BorderSpacing.Top = 5
+      Caption = 'Power off on close'
+      OnChange = check_video_recordingChange
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 14
     end
   end
   object menu_main1: TMainMenu
