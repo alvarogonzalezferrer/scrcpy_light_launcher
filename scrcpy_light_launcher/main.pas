@@ -5,7 +5,7 @@ by Alvaro 'krono' Gonzalez Ferrer
 
 https://alvarogonzalezferrer.github.io/
 
-Copyright (c) 2021-2023
+Copyright (c) 2021-2024
 
 In loving memory of my father.
 
@@ -42,10 +42,12 @@ type
     btn_launch: TButton;
     bitrate_label: TLabel;
     check_alwas_on_top: TCheckBox;
+    check_UHID_keyboard: TCheckBox;
     check_turn_screen_off: TCheckBox;
     check_stay_awake: TCheckBox;
     check_audio: TCheckBox;
     check_power_off: TCheckBox;
+    check_UHID_mouse: TCheckBox;
     check_video_orientation: TCheckBox;
     check_max_size_vid: TCheckBox;
     check_max_fps_vid: TCheckBox;
@@ -168,6 +170,16 @@ begin
              p[16] := '--power-off-on-close';
         end;
 
+     if (check_UHID_keyboard.Checked) then
+        begin
+          p[17] := '-K';
+        end;
+
+     if (check_UHID_mouse.Checked) then
+        begin
+          p[17] := '-M';
+        end;
+
      // message while we wait
      tmp := btn_launch.Caption;
      btn_launch.Caption := 'WAITING!';
@@ -179,7 +191,7 @@ begin
 
      // for some reason the try except is NOT WORKING / DEBUG / FIX THIS / TODO
      try
-        RunCommand(path_to_scrcpy, p, s)
+        RunCommand(path_to_scrcpy, p, s) // [], swoHIDE) deberia hacer que no se vea la ventana
      except
            on E: EProcess do
               Application.MessageBox('Failed to lanch. Configure path first!', 'Failure', MB_ICONERROR + MB_OK);
