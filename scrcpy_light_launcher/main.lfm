@@ -3524,7 +3524,7 @@ object form_main: Tform_main
       AnchorSideTop.Control = groupParameters
       Left = 2
       Height = 15
-      Hint = 'Video bitrate of display'
+      Hint = 'Video bitrate of display, default is 8 Mbps'
       Top = 3
       Width = 74
       BorderSpacing.Left = 2
