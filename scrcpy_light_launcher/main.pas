@@ -112,7 +112,8 @@ begin
 
      if (bitrate_bar.Position > 0) then
         begin
-          p[1] := '--bit-rate';
+          // video bit rate
+          p[1] := '-b';
           p[2] := IntToStr(bitrate_bar.Position) +'M';
         end;
 

@@ -112,7 +112,8 @@ begin
 
      if (bitrate_bar.Position > 0) then
         begin
-          p[1] := '--bit-rate';
+          // video bit rate
+          p[1] := '-b';
           p[2] := IntToStr(bitrate_bar.Position) +'M';
         end;
 
@@ -191,7 +192,7 @@ begin
 
      // for some reason the try except is NOT WORKING / DEBUG / FIX THIS / TODO
      try
-        RunCommand(path_to_scrcpy, p, s, [], swoMaximize) // [], swoHIDE) deberia hacer que no se vea la ventana
+        RunCommand(path_to_scrcpy, p, s) // [], swoHIDE) deberia hacer que no se vea la ventana
      except
            on E: EProcess do
               Application.MessageBox('Failed to lanch. Configure path first!', 'Failure', MB_ICONERROR + MB_OK);
