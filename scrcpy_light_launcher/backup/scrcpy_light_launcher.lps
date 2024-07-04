@@ -18,7 +18,6 @@
         <ComponentName Value="form_main"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <CursorPos X="28" Y="115"/>
         <UsageCount Value="89"/>
         <Loaded Value="True"/>
@@ -30,9 +29,10 @@
         <ComponentName Value="aboutForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="47"/>
-        <CursorPos X="65" Y="57"/>
+        <TopLine Value="52"/>
+        <CursorPos X="3" Y="63"/>
         <UsageCount Value="89"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -66,11 +66,15 @@
         <UsageCount Value="4"/>
       </Unit5>
     </Units>
-    <JumpHistory Count="1">
+    <JumpHistory Count="2" HistoryIndex="1">
       <Position1>
         <Filename Value="main.pas"/>
         <Caret Line="171" Column="7"/>
       </Position1>
+      <Position2>
+        <Filename Value="about_form.pas"/>
+        <Caret Line="57" Column="65" TopLine="47"/>
+      </Position2>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
