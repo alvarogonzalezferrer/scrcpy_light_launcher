@@ -18,6 +18,8 @@ I don't like bloated apps that depend on a million libraries to do simple things
 
 ![Screenshoot](screenshoots/screen02.jpg)
 
+![Screenshoot](screenshoots/screen03.jpg)
+
 # License 
 
 [Read the license to use here.](LICENSE.md)
