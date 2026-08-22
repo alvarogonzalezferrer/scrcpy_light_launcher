@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="47" Y="22"/>
-        <UsageCount Value="89"/>
+        <UsageCount Value="90"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -18,8 +18,10 @@
         <ComponentName Value="form_main"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <CursorPos X="28" Y="115"/>
-        <UsageCount Value="89"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="275"/>
+        <CursorPos Y="276"/>
+        <UsageCount Value="90"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -29,11 +31,9 @@
         <ComponentName Value="aboutForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="61"/>
+        <EditorIndex Value="3"/>
         <CursorPos X="3" Y="64"/>
-        <UsageCount Value="89"/>
+        <UsageCount Value="90"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit2>
@@ -43,10 +43,11 @@
         <ComponentName Value="KronoPic"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="6"/>
+        <EditorIndex Value="2"/>
         <CursorPos X="20" Y="15"/>
-        <UsageCount Value="89"/>
+        <UsageCount Value="90"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="help_form.pas"/>
@@ -54,9 +55,11 @@
         <ComponentName Value="helpForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="1"/>
         <CursorPos X="22" Y="17"/>
-        <UsageCount Value="89"/>
+        <UsageCount Value="90"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
@@ -66,7 +69,7 @@
         <UsageCount Value="4"/>
       </Unit5>
     </Units>
-    <JumpHistory Count="5" HistoryIndex="4">
+    <JumpHistory Count="6" HistoryIndex="5">
       <Position1>
         <Filename Value="main.pas"/>
         <Caret Line="171" Column="7"/>
@@ -87,21 +90,14 @@
         <Filename Value="about_form.pas"/>
         <Caret Line="50" Column="3" TopLine="42"/>
       </Position5>
+      <Position6>
+        <Filename Value="main.pas"/>
+        <Caret Line="161" TopLine="153"/>
+      </Position6>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
-  <Debugging>
-    <BreakPoints>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="main.pas"/>
-        <Line Value="195"/>
-      </Item>
-    </BreakPoints>
-  </Debugging>
 </CONFIG>

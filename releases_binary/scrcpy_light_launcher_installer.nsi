@@ -17,12 +17,16 @@ RequestExecutionLevel admin
 ; Build Unicode installer
 Unicode True
 
+; Icons
+Icon "install_icon.ico"
+UninstallIcon "install_icon.ico"
+
 ; The default installation directory
 InstallDir $PROGRAMFILES\scrcpy_light_launcher
 
 ; Registry key to check for directory (so if you install again, it will 
 ; overwrite the old one automatically)
-InstallDirRegKey HKLM "Software\scrcpy_light_launcher" "Install_Dir"
+InstallDirRegKey HKLM "Software\krono\scrcpy_light_launcher" "Install_Dir"
 
 ;--------------------------------
 
@@ -53,10 +57,10 @@ Section "Scrcpy light launcher (required)"
   SetOutPath $INSTDIR
   
   ; Put file there
-  File "bin\" *.*
+  File "bin\*.*"
   
   ; Write the installation path into the registry
-  WriteRegStr HKLM Software\scrcpy_light_launcher "Install_Dir" "$INSTDIR"
+  WriteRegStr HKLM "Software\krono\scrcpy_light_launcher" "Install_Dir" "$INSTDIR"
   
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\scrcpy_light_launcher" "DisplayName" "scrcpy_light_launcher"
@@ -69,6 +73,8 @@ SectionEnd
 
 ; Optional section (can be disabled by the user)
 Section "Start Menu Shortcuts"
+
+  SetShellVarContext all
 
   CreateDirectory "$SMPROGRAMS\scrcpy_light_launcher"
   CreateShortcut "$SMPROGRAMS\scrcpy_light_launcher\Uninstall.lnk" "$INSTDIR\uninstall.exe"
@@ -84,7 +90,7 @@ SectionEnd
 Function UninstallPrevious
 
     ; Check for uninstaller.
-    ReadRegStr $R0 HKLM Software\scrcpy_light_launcher "Install_Dir"
+    ReadRegStr $R0 HKLM "Software\krono\scrcpy_light_launcher" "Install_Dir"
 
     ${If} $R0 == "" 
 		DetailPrint "No previous installation detected." 	
@@ -94,7 +100,7 @@ Function UninstallPrevious
 	DetailPrint "Removing previous installation."    
 
     ; Run the uninstaller silently.
-    ExecWait '"$R0\Uninstall.exe /S"'
+    ExecWait '"$R0\Uninstall.exe" /S'
 
     Done:
 
@@ -105,10 +111,12 @@ FunctionEnd
 ; Uninstaller
 
 Section "Uninstall"
+
+  SetShellVarContext all
   
   ; Remove registry keys
   DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\scrcpy_light_launcher"
-  DeleteRegKey HKLM "Software\scrcpy_light_launcher"
+  DeleteRegKey HKLM "Software\krono\scrcpy_light_launcher"
 
   ; Remove files and uninstaller
   Delete $INSTDIR\*.*
@@ -123,5 +131,3 @@ Section "Uninstall"
   RMDir "$INSTDIR"
 
 SectionEnd
-
-

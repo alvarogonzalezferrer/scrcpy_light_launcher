@@ -5,7 +5,7 @@ by Alvaro 'krono' Gonzalez Ferrer
 
 https://alvarogonzalezferrer.github.io/
 
-Copyright (c) 2021-2024
+Copyright (c) 2021-2026
 
 In loving memory of my father.
 
@@ -32,7 +32,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, StdCtrls,
-  Process, LCLType, ComCtrls, about_form, help_form;
+  Process, LCLType, ComCtrls, IniFiles, about_form, help_form;
 
 type
 
@@ -101,108 +101,107 @@ implementation
 
 procedure Tform_main.btn_launchClick(Sender: TObject);
 var
-   s : AnsiString; // string return
-   p: array[1..50] of AnsiString; // parameters
-   tmp : AnsiString; // save button caption
-   i: Integer; // iterator
+   args : TStringList;
+   proc : TProcess;
+   tmp : AnsiString;
+   i : Integer;
 begin
-     // todo init parameters
-     for i := 1 to 50 do
-         p[i] := '';
-
-     if (bitrate_bar.Position > 0) then
-        begin
-          // video bit rate
-          p[1] := '-b';
-          p[2] := IntToStr(bitrate_bar.Position) +'M';
-        end;
-
-     if (check_max_size_vid.Checked) then
-        begin
-          p[3] := '--max-size';
-          p[4] := combo_max_size_vid.Text;
-        end;
-
-     if (check_max_fps_vid.Checked) then
-        begin
-             p[5] := '--max-fps';
-             p[6] := combo_max_fps_vid.Text;
-        end;
-
-     if (check_video_orientation.Checked) then
-        begin
-            p[7] := '--lock-video-orientation='+IntToStr(combo_video_orientation.ItemIndex);
-            // p[8] := IntToStr(combo_video_orientation.ItemIndex);
-        end;
-
-     if (check_video_recording.Checked) then
-        begin
-             p[9] := '--record';
-             p[10] := record_filename_video.Text;
-        end;
-
-     if (check_full_screen.Checked) then
-        begin
-             p[11] := '--fullscreen';
-        end;
-
-     if (check_alwas_on_top.Checked) then
-        begin
-             p[12] := '--always-on-top';
-        end;
-
-     if (check_stay_awake.Checked) then
-        begin
-             p[13] := '--stay-awake';
-        end;
-
-     if not (check_audio.Checked) then
-        begin
-             p[14] := '--no-audio';
-        end;
-
-     if (check_turn_screen_off.Checked) then
-        begin
-             p[15] := '--turn-screen-off';
-        end;
-
-     if (check_power_off.Checked) then
-        begin
-             p[16] := '--power-off-on-close';
-        end;
-
-     if (check_UHID_keyboard.Checked) then
-        begin
-          p[17] := '-K';
-        end;
-
-     if (check_UHID_mouse.Checked) then
-        begin
-          p[17] := '-M';
-        end;
-
-     // message while we wait
-     tmp := btn_launch.Caption;
-     btn_launch.Caption := 'WAITING!';
-
-     // run the scrcpy show
-
-     // minimize this application window
-     Application.Minimize;
-
-     // for some reason the try except is NOT WORKING / DEBUG / FIX THIS / TODO
+     args := TStringList.Create;
      try
-        RunCommand(path_to_scrcpy, p, s) // [], swoHIDE) deberia hacer que no se vea la ventana
-     except
-           on E: EProcess do
-              Application.MessageBox('Failed to lanch. Configure path first!', 'Failure', MB_ICONERROR + MB_OK);
+        if (bitrate_bar.Position > 0) then
+           begin
+             args.Add('-b');
+             args.Add(IntToStr(bitrate_bar.Position) + 'M');
+           end;
+
+        if (check_max_size_vid.Checked) then
+           begin
+             args.Add('--max-size');
+             args.Add(combo_max_size_vid.Text);
+           end;
+
+        if (check_max_fps_vid.Checked) then
+           begin
+             args.Add('--max-fps');
+             args.Add(combo_max_fps_vid.Text);
+           end;
+
+        if (check_video_orientation.Checked) then
+           args.Add('--lock-video-orientation=' + IntToStr(combo_video_orientation.ItemIndex));
+
+        if (check_video_recording.Checked) then
+           begin
+             args.Add('--record');
+             args.Add(record_filename_video.Text);
+           end;
+
+        if (check_full_screen.Checked) then
+           args.Add('--fullscreen');
+
+        if (check_alwas_on_top.Checked) then
+           args.Add('--always-on-top');
+
+        if (check_stay_awake.Checked) then
+           args.Add('--stay-awake');
+
+        if not (check_audio.Checked) then
+           args.Add('--no-audio');
+
+        if (check_turn_screen_off.Checked) then
+           args.Add('--turn-screen-off');
+
+        if (check_power_off.Checked) then
+           args.Add('--power-off-on-close');
+
+        if (check_UHID_keyboard.Checked) then
+           args.Add('-K');
+
+        if (check_UHID_mouse.Checked) then
+           args.Add('-M');
+
+        tmp := btn_launch.Caption;
+        btn_launch.Caption := 'WAITING!';
+        btn_launch.Enabled := False;
+        Application.ProcessMessages;
+
+        Application.Minimize;
+
+        proc := TProcess.Create(nil);
+        try
+           proc.Executable := path_to_scrcpy;
+           for i := 0 to args.Count - 1 do
+               proc.Parameters.Add(args[i]);
+
+           proc.Options := [poNoConsole, poWaitOnExit];
+           proc.ShowWindow := swoHIDE;
+
+           try
+              proc.Execute;
+
+              if proc.ExitStatus <> 0 then
+                 Application.MessageBox(
+                    PChar('scrcpy finalizó con error (código ' + IntToStr(proc.ExitStatus) + ').'),
+                    'Aviso', MB_ICONWARNING + MB_OK);
+              // ExitStatus = 0 -> todo salió bien, no hace falta avisar
+
+           except
+                 on E: Exception do
+                    Application.MessageBox(
+                       PChar('Failed to launch. Configure path first!' + sLineBreak + E.Message),
+                       'Failure', MB_ICONERROR + MB_OK);
+           end;
+
+        finally
+           proc.Free;
+        end;
+
+        Application.Restore;
+        btn_launch.Caption := tmp;
+        btn_launch.Enabled := True;
+
+     finally
+        args.Free;
      end;
-
-     // restore window
-     Application.Restore;
-
-     // restore caption
-     btn_launch.Caption := tmp;
 end;
 
 procedure Tform_main.check_max_fps_vidChange(Sender: TObject);
@@ -255,9 +254,18 @@ begin
 
 end;
 
+
 procedure Tform_main.FormCreate(Sender: TObject);
+var
+   ini : TIniFile;
 begin
-  // TODO debug should load config here
+     // carga config guardada, si existe
+     ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.ini'));
+     try
+        path_to_scrcpy := ini.ReadString('config', 'path_to_scrcpy', path_to_scrcpy);
+     finally
+        ini.Free;
+     end;
 end;
 
 procedure Tform_main.menu_aboutClick(Sender: TObject);

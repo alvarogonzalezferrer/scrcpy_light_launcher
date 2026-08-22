@@ -1,113 +1,110 @@
-# Scrcpy light launcher
+# Scrcpy Light Launcher
 
 Control your Android phone or device from your desktop PC using screen mirroring.
 
 scrcpy is a free and open-source screen mirroring application that allows control of an Android device from a Windows, macOS, or Linux desktop computer.
 
-# What is this
+## What is this
 
-![Screenshoot](screenshoots/screen01.jpg)
+![Screenshot](screenshoots/screen01.jpg)
 
-This is a easy to use light launcher to control your android phone from a desktop PC.
+This is an easy to use, light launcher to control your Android phone from a desktop PC.
 
-I did this launcher because all the other tools were paid, or command line, or hard to use.
+I built this launcher because all the other tools were paid, command-line only, or hard to use.
 
-This is a very light, very fast, very easy and open source alternative.
+This is a very light, very fast, very easy, and open source alternative.
 
 I don't like bloated apps that depend on a million libraries to do simple things.
 
-![Screenshoot](screenshoots/screen02.jpg)
+![Screenshot](screenshoots/screen02.jpg)
 
-![Screenshoot](screenshoots/screen03.jpg)
+![Screenshot](screenshoots/screen03.jpg)
 
-# License 
+## Features
 
-[Read the license to use here.](LICENSE.md)
+- Adjustable video bitrate
+- Max resolution / max size limit
+- Max FPS limit
+- Lock video orientation
+- Screen recording, with custom output file
+- Fullscreen mode
+- Always-on-top window
+- Keep device awake while connected
+- Disable audio forwarding
+- Turn device screen off while mirroring
+- Power off device on close
+- UHID keyboard and mouse support
+- Windows installer available, no extra runtime dependencies
 
-# How to use
+## How to use
 
-Download one of the releases pre-compiled for your system.
+Download one of the [releases](../../releases) pre-compiled for your system.
 
 Just run the executable file and select the options.
 
 This application provides display and control of Android devices connected on USB.
 
-# Now with installer
+### Windows installer
 
-For Windows 64 bits, I provided a installer, easy to use.
+For Windows 64 bits, an installer is provided for easy setup.
+
+**scrcpy itself is bundled inside the installer package** — there's nothing else to download. The bundled scrcpy build is updated to the latest available version each time a new installer package is generated.
 
 Just download and run it.
 
-# Who am I?
-
-Software developer, Computer Science graduate from Argentina.
-
-Currently living at Costa Rica.
-
-Check my portfolio for more info:
-
-https://alvarogonzalezferrer.github.io/
-
-There you can see my portfolio, I'm a freelancer, mainly expert in C++, you can hire me for your projects!
-
 ## Requirements
 
-The Android device requires at least API 21 (**Android +5.0**).
+The Android device requires at least API 21 (**Android 5.0** or higher).
 
-**Make sure you enabled "adb debugging" on your device.**
+**Make sure you enable USB debugging on your device** — this is required for the launcher to work.
 
 On some devices, you also need to enable an additional option to control it using keyboard and mouse.
 
-**VERY IMPORTANT ENABLE DEBUG ON YOUR DEVICE**
+### Enabling USB debugging
 
-Enable adb debugging on your device as follows:
-
-1. To use adb with a device connected over USB, you must **enable USB debugging** in the device system settings, under **Developer options**.
-
+1. To use adb with a device connected over USB, you must enable **USB debugging** in the device system settings, under **Developer options**.
 2. On Android 4.2 and higher, the Developer options screen is hidden by default.
+3. To make it visible, go to **Settings > About phone** and tap **Build number** seven times.
+4. Return to the previous screen to find **Developer options** at the bottom.
 
-3. To make it visible, go to **Settings > About** phone and tap Build number **SEVEN** times.
+Note: on some devices, the Developer options screen might be located or named differently.
 
-4. Return to the previous screen to find Developer options at the bottom.
+### Mouse and keyboard not working?
 
-NOTE: On some devices, the Developer options screen might be located or named differently.
+On some devices, you may need to enable an extra option to allow simulating input.
 
-**MOUSE AND KEYBOARD**
+In Developer options, enable:
 
-If Mouse and keyboard do not work:
+**USB debugging (Security settings) → Allow granting permissions and simulating input via USB debugging**
 
-On some devices, you may need to enable an option to allow simulating input.
+## How it works
 
-In developer options, enable:
+This launcher is based on [scrcpy](https://github.com/genymobile/scrcpy/).
 
-**USB debugging (Security settings)**
+Communication between the Android device and the computer is performed via a USB connection and Android Debug Bridge (ADB). The software runs a small server on the Android device and communicates with it via a socket over an ADB tunnel — no root access or app installation on the Android device is required.
 
-Allow granting permissions and simulating input via USB debugging
+The screen content is streamed as H.264 video, decoded and displayed on the computer. Keyboard and mouse input is pushed to the Android device through the same connection.
 
-# How to compile
+A wireless connection over Wi-Fi is also supported by scrcpy, though it requires a few extra setup steps not covered by this launcher yet.
 
-You need to use Lazarus IDE, https://www.lazarus-ide.org/
+## How to compile
 
-Should compile very easy, no weird dependencies.
+You need [Lazarus IDE](https://www.lazarus-ide.org/).
 
-# How it works
+It should compile very easily, with no unusual dependencies.
 
-This launcher is based on scrcpy, https://github.com/genymobile/scrcpy/
+## Who am I?
 
-Communication between the Android device and the computer is primarily performed via a USB connection and Android Debug Bridge (ADB).
+Software developer, Computer Science graduate from Argentina.
 
-The software functions by executing a server on the Android device, then communicating with the server via a socket over an ADB tunnel.
+Currently living in Costa Rica.
 
-It does not require rooting or the installation of software on the Android device.
+I'm a freelancer, mainly focused on C++ — check my portfolio for more info:
 
-The screen content is streamed as H.264 video, which the software then decodes and displays on the computer. The software pushes keyboard and mouse input to the Android device over the server.
+https://alvarogonzalezferrer.github.io/
 
-Setup involves enabling USB debugging on the Android device, connecting the device to the computer, and running the scrcpy application on the computer.
+**Available for hire — feel free to reach out for your projects.**
 
-Access to more configuration options, such as changing the bit rate or enabling screen recording, is via a command-line interface.
+## License
 
-The software also supports a wireless connection over Wi-Fi, but that requires more steps to set up.
-
-A few features were added to scrcpy in its version 1.9 release in 2019, including the ability to turn the screen off while mirroring and to copy clipboard content between the two devices.
-
-Chris Hoffman of How-To Geek compared scrcpy to AirMirror and Vysor, two other applications with a similar function. Hoffman also pointed to Miracast as an alternative, while noting that it is no longer widely supported among new Android devices, and that it does not support remotely controlling the device.
+This project is licensed under [LICENSE.md](LICENSE.md).
