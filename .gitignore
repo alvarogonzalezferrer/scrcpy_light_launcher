@@ -62,3 +62,4 @@ backup/
 # Windows junk
 Thumbs.db
 desktop.ini
+*.o

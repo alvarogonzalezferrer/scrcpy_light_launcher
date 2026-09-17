@@ -82,7 +82,7 @@ type
     procedure record_filename_videoClick(Sender: TObject);
 
   private
-
+    function GetScrcpyExitDescription(ExitCode: Integer): AnsiString;
   public
 
   end;
