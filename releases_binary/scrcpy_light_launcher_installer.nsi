@@ -114,6 +114,11 @@ Section "Uninstall"
 
   SetShellVarContext all
   
+  ; Mata adb.exe si sigue corriendo, para poder borrar el archivo despues
+  nsExec::Exec 'taskkill /F /IM adb.exe'
+  nsExec::Exec 'taskkill /F /IM scrcpy.exe'
+  Sleep 800
+  
   ; Remove registry keys
   DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\scrcpy_light_launcher"
   DeleteRegKey HKLM "Software\krono\scrcpy_light_launcher"
@@ -129,5 +134,5 @@ Section "Uninstall"
   ; Remove directories
   RMDir "$SMPROGRAMS\scrcpy_light_launcher"
   RMDir "$INSTDIR"
-
+  
 SectionEnd
