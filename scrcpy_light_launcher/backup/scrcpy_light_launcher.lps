@@ -8,9 +8,10 @@
       <Unit0>
         <Filename Value="scrcpy_light_launcher.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="47" Y="22"/>
+        <EditorIndex Value="1"/>
+        <CursorPos Y="24"/>
         <UsageCount Value="90"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="main.pas"/>
@@ -19,8 +20,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="275"/>
-        <CursorPos Y="276"/>
+        <TopLine Value="187"/>
+        <CursorPos X="47" Y="202"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -31,8 +32,9 @@
         <ComponentName Value="aboutForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="3"/>
-        <CursorPos X="3" Y="64"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="53"/>
+        <CursorPos X="38" Y="59"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -43,7 +45,7 @@
         <ComponentName Value="KronoPic"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <CursorPos X="20" Y="15"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
@@ -55,7 +57,7 @@
         <ComponentName Value="helpForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <CursorPos X="22" Y="17"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
@@ -69,7 +71,7 @@
         <UsageCount Value="4"/>
       </Unit5>
     </Units>
-    <JumpHistory Count="6" HistoryIndex="5">
+    <JumpHistory Count="9" HistoryIndex="8">
       <Position1>
         <Filename Value="main.pas"/>
         <Caret Line="171" Column="7"/>
@@ -94,6 +96,18 @@
         <Filename Value="main.pas"/>
         <Caret Line="161" TopLine="153"/>
       </Position6>
+      <Position7>
+        <Filename Value="main.pas"/>
+        <Caret Line="276" TopLine="275"/>
+      </Position7>
+      <Position8>
+        <Filename Value="main.pas"/>
+        <Caret Line="195" Column="14" TopLine="188"/>
+      </Position8>
+      <Position9>
+        <Filename Value="about_form.pas"/>
+        <Caret Line="64" Column="3"/>
+      </Position9>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

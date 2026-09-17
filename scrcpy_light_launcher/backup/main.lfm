@@ -6,7 +6,7 @@ object form_main: Tform_main
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Scrcpy light launcher'
-  ClientHeight = 410
+  ClientHeight = 430
   ClientWidth = 320
   Icon.Data = {
     EEB001000000010006000000000001002000802B000066000000808000000100
@@ -3475,10 +3475,10 @@ object form_main: Tform_main
     B8FF0000B8FF0000B8FF0000B8FF0000B8FF
   }
   Menu = menu_main1
+  Position = poDesktopCenter
+  LCLVersion = '4.8.0.0'
   OnClose = FormClose
   OnCreate = FormCreate
-  Position = poDesktopCenter
-  LCLVersion = '2.2.6.0'
   object btn_launch: TButton
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = groupParameters
@@ -3499,11 +3499,11 @@ object form_main: Tform_main
     BorderSpacing.Bottom = 5
     Caption = 'Launch'
     Font.Style = [fsBold]
-    OnClick = btn_launchClick
     ParentFont = False
     ParentShowHint = False
     ShowHint = True
     TabOrder = 0
+    OnClick = btn_launchClick
   end
   object groupParameters: TGroupBox
     AnchorSideLeft.Control = Owner
@@ -3554,8 +3554,8 @@ object form_main: Tform_main
       Hint = 'Video Bitrate'
       Top = 3
       Width = 218
-      OnChange = bitrate_barChange
       Position = 0
+      OnChange = bitrate_barChange
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 12
       BorderSpacing.Bottom = 5
@@ -3576,11 +3576,11 @@ object form_main: Tform_main
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'Max size'
-      OnChange = check_max_size_vidChange
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
+      OnChange = check_max_size_vidChange
     end
     object combo_max_size_vid: TComboBox
       AnchorSideLeft.Control = check_video_orientation
@@ -3629,11 +3629,11 @@ object form_main: Tform_main
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'Max FPS'
-      OnChange = check_max_fps_vidChange
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 3
+      OnChange = check_max_fps_vidChange
     end
     object combo_max_fps_vid: TComboBox
       AnchorSideLeft.Control = check_video_orientation
@@ -3678,11 +3678,11 @@ object form_main: Tform_main
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'Orientation'
-      OnChange = check_video_orientationChange
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 5
+      OnChange = check_video_orientationChange
     end
     object combo_video_orientation: TComboBox
       AnchorSideLeft.Control = check_video_orientation
@@ -3724,11 +3724,11 @@ object form_main: Tform_main
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'Record'
-      OnChange = check_video_recordingChange
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 7
+      OnChange = check_video_recordingChange
     end
     object record_filename_video: TEdit
       AnchorSideLeft.Control = combo_video_orientation
@@ -3744,10 +3744,10 @@ object form_main: Tform_main
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Top = 5
       Enabled = False
-      OnClick = record_filename_videoClick
       ParentFont = False
       TabOrder = 8
       TextHint = 'File to record the video'
+      OnClick = record_filename_videoClick
     end
     object check_full_screen: TCheckBox
       AnchorSideLeft.Control = groupParameters
@@ -3761,11 +3761,11 @@ object form_main: Tform_main
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'Fullscreen'
-      OnChange = check_video_recordingChange
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 9
+      OnChange = check_video_recordingChange
     end
     object check_alwas_on_top: TCheckBox
       AnchorSideLeft.Control = groupParameters
@@ -3779,11 +3779,11 @@ object form_main: Tform_main
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'Always on top'
-      OnChange = check_video_recordingChange
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 10
+      OnChange = check_video_recordingChange
     end
     object check_stay_awake: TCheckBox
       AnchorSideLeft.Control = groupParameters
@@ -3798,12 +3798,12 @@ object form_main: Tform_main
       BorderSpacing.Top = 5
       Caption = 'Stay awake'
       Checked = True
-      OnChange = check_video_recordingChange
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
       State = cbChecked
       TabOrder = 11
+      OnChange = check_video_recordingChange
     end
     object check_audio: TCheckBox
       AnchorSideLeft.Control = groupParameters
@@ -3817,11 +3817,11 @@ object form_main: Tform_main
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'Audio forwarding'
-      OnChange = check_video_recordingChange
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 12
+      OnChange = check_video_recordingChange
     end
     object check_turn_screen_off: TCheckBox
       AnchorSideLeft.Control = groupParameters
@@ -3835,11 +3835,11 @@ object form_main: Tform_main
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'Turn screen off while mirroring'
-      OnChange = check_video_recordingChange
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 13
+      OnChange = check_video_recordingChange
     end
     object check_power_off: TCheckBox
       AnchorSideLeft.Control = groupParameters
@@ -3853,11 +3853,11 @@ object form_main: Tform_main
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'Power off on close'
-      OnChange = check_video_recordingChange
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 14
+      OnChange = check_video_recordingChange
     end
     object check_UHID_keyboard: TCheckBox
       AnchorSideLeft.Control = groupParameters
@@ -3871,11 +3871,11 @@ object form_main: Tform_main
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'UHID keyboard'
-      OnChange = check_video_recordingChange
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 15
+      OnChange = check_video_recordingChange
     end
     object check_UHID_mouse: TCheckBox
       AnchorSideLeft.Control = groupParameters
@@ -3889,11 +3889,11 @@ object form_main: Tform_main
       BorderSpacing.Left = 5
       BorderSpacing.Top = 5
       Caption = 'UHID mouse'
-      OnChange = check_video_recordingChange
       ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 16
+      OnChange = check_video_recordingChange
     end
   end
   object menu_main1: TMainMenu

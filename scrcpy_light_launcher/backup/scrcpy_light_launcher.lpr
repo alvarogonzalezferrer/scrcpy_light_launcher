@@ -19,7 +19,7 @@ begin
   Application.CreateForm(Tform_main, form_main);
   Application.CreateForm(TaboutForm, aboutForm);
   Application.CreateForm(TKronoPic, KronoPic);
-  Application.CreateForm(Thelp_form, help_form);
+  Application.CreateForm(ThelpForm, helpForm);
   Application.Run;
 end.
 

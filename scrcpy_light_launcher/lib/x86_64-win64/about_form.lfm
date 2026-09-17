@@ -8,10 +8,10 @@ object aboutForm: TaboutForm
   Caption = 'About...'
   ClientHeight = 240
   ClientWidth = 350
+  Position = poMainFormCenter
+  LCLVersion = '4.8.0.0'
   OnClick = FormClick
   OnCreate = FormCreate
-  Position = poMainFormCenter
-  LCLVersion = '2.2.6.0'
   object Label1: TLabel
     AnchorSideLeft.Control = Image1
     AnchorSideLeft.Side = asrBottom
@@ -24,7 +24,7 @@ object aboutForm: TaboutForm
     Alignment = taCenter
     BorderSpacing.Left = 8
     BorderSpacing.Top = 8
-    Caption = 'scrcpy light launcher'#13#10'v 2026.08.21'#13#10'By Alvaro "Krono" Gonzalez'#13#10'Copyright (C) 2021-2026'#13#10'In loving memory of my father.'
+    Caption = 'scrcpy light launcher'#13#10'v 2026.09.17'#13#10'By Alvaro "Krono" Gonzalez'#13#10'Copyright (C) 2021-2026'#13#10'In loving memory of my father.'
     Font.Height = -14
     ParentColor = False
     ParentFont = False
@@ -88,7 +88,6 @@ object aboutForm: TaboutForm
     Top = 5
     Width = 140
     Center = True
-    OnClick = Image1Click
     Picture.Data = {
       0A544A706567496D61676509290000FFD8FFE000104A46494600010100000100
       010000FFED003650686F746F73686F7020332E30003842494D04040000000000
@@ -422,5 +421,6 @@ object aboutForm: TaboutForm
     }
     Proportional = True
     Stretch = True
+    OnClick = Image1Click
   end
 end

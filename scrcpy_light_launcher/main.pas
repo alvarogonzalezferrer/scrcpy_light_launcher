@@ -82,7 +82,7 @@ type
     procedure record_filename_videoClick(Sender: TObject);
 
   private
-
+    function GetScrcpyExitDescription(ExitCode: Integer): AnsiString;
   public
 
   end;
@@ -98,6 +98,18 @@ implementation
 {$R *.lfm}
 
 { Tform_main }
+
+function Tform_main.GetScrcpyExitDescription(ExitCode: Integer): AnsiString;
+begin
+     case ExitCode of
+       0: Result := 'Finished successfully.';
+       1: Result := 'Could not establish the initial connection to the device. ' +
+                     'Check that USB debugging is enabled and the device is connected.';
+       2: Result := 'The device disconnected during an active session.';
+     else
+       Result := 'Unknown exit code (' + IntToStr(ExitCode) + ').';
+     end;
+end;
 
 procedure Tform_main.btn_launchClick(Sender: TObject);
 var
@@ -179,9 +191,9 @@ begin
               proc.Execute;
 
               if proc.ExitStatus <> 0 then
-                 Application.MessageBox(
-                    PChar('scrcpy finalizó con error (código ' + IntToStr(proc.ExitStatus) + ').'),
-                    'Aviso', MB_ICONWARNING + MB_OK);
+   Application.MessageBox(
+      PChar('scrcpy exited with a problem:' + sLineBreak + GetScrcpyExitDescription(proc.ExitStatus)),
+      'Warning', MB_ICONWARNING + MB_OK);
               // ExitStatus = 0 -> todo salió bien, no hace falta avisar
 
            except
