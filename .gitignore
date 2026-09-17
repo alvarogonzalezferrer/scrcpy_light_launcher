@@ -67,3 +67,4 @@ desktop.ini
 *.o
 /scrcpy_light_launcher/lib
 scrcpy_light_launcher/lib/x86_64-win64/scrcpy_light_launcher.obj
+/scrcpy_light_launcher/backup

@@ -83,6 +83,7 @@ type
 
   private
     function GetScrcpyExitDescription(ExitCode: Integer): AnsiString;
+    function GetConfigFilePath: AnsiString;
   public
 
   end;
@@ -109,6 +110,18 @@ begin
      else
        Result := 'Unknown exit code (' + IntToStr(ExitCode) + ').';
      end;
+end;
+
+function Tform_main.GetConfigFilePath: AnsiString;
+var
+   configDir : AnsiString;
+begin
+     configDir := GetEnvironmentVariable('APPDATA') + '\scrcpy_light_launcher\';
+
+     if not DirectoryExists(configDir) then
+        ForceDirectories(configDir);
+
+     Result := configDir + 'scrcpy_light_launcher.ini';
 end;
 
 procedure Tform_main.btn_launchClick(Sender: TObject);
@@ -266,13 +279,12 @@ begin
 
 end;
 
-
 procedure Tform_main.FormCreate(Sender: TObject);
 var
    ini : TIniFile;
 begin
-     // carga config guardada, si existe
-     ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.ini'));
+     // load config file, if exists
+     ini := TIniFile.Create(GetConfigFilePath);
      try
         path_to_scrcpy := ini.ReadString('config', 'path_to_scrcpy', path_to_scrcpy);
      finally
@@ -290,12 +302,18 @@ var
    ini : TIniFile;
 begin
   // config
+
+  if (Trim(path_to_scrcpy) <> '') and DirectoryExists(ExtractFilePath(path_to_scrcpy)) then
+     select_scrcpy_exe_dialog.InitialDir := ExtractFilePath(path_to_scrcpy)
+  else
+     select_scrcpy_exe_dialog.InitialDir := ExtractFilePath(Application.ExeName);
+
   if select_scrcpy_exe_dialog.Execute then
      begin
        path_to_scrcpy := select_scrcpy_exe_dialog.FileName;
 
        // guarda config para la proxima sesion
-       ini := TIniFile.Create(ChangeFileExt(Application.ExeName, '.ini'));
+       ini := TIniFile.Create(GetConfigFilePath);
        try
           ini.WriteString('config', 'path_to_scrcpy', path_to_scrcpy);
        finally

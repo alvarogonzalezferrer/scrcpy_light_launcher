@@ -204,11 +204,11 @@ begin
               proc.Execute;
 
               if proc.ExitStatus <> 0 then
-   Application.MessageBox(
-      PChar('scrcpy exited with a problem:' + sLineBreak + GetScrcpyExitDescription(proc.ExitStatus)),
-      'Warning', MB_ICONWARNING + MB_OK);
-              // ExitStatus = 0 -> todo salió bien, no hace falta avisar
+                 Application.MessageBox(
+                                        PChar('scrcpy exited with a problem:' + sLineBreak + GetScrcpyExitDescription(proc.ExitStatus)),
+                                        'Warning', MB_ICONWARNING + MB_OK);
 
+               // ExitStatus = 0 -> todo salió bien, no hace falta avisar
            except
                  on E: Exception do
                     Application.MessageBox(
