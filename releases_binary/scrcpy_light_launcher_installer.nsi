@@ -36,6 +36,7 @@ Page components
 Page directory
 Page instfiles
 
+UninstPage components
 UninstPage uninstConfirm
 UninstPage instfiles
 
@@ -110,7 +111,9 @@ FunctionEnd
 
 ; Uninstaller
 
-Section "Uninstall"
+Section "un.Scrcpy light launcher (required)" SecUninstallMain
+
+  SectionIn RO
 
   SetShellVarContext all
   
@@ -135,4 +138,17 @@ Section "Uninstall"
   RMDir "$SMPROGRAMS\scrcpy_light_launcher"
   RMDir "$INSTDIR"
   
+SectionEnd
+
+Section "un.Remove saved settings" SecUninstallSettings
+
+  ; Si corre en modo silencioso (upgrade automatico via UninstallPrevious),
+  ; no tocar la config del usuario, sin importar si esta checkeado.
+  IfSilent skip_settings_removal
+
+  SetShellVarContext current
+  RMDir /r "$APPDATA\scrcpy_light_launcher"
+
+  skip_settings_removal:
+
 SectionEnd
