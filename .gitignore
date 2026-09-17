@@ -31,3 +31,34 @@ lib/
 /releases_binary/bin
 *.o
 scrcpy_light_launcher/scrcpy_light_launcher.ini
+
+# Lazarus backup files (Environment Options -> Backup)
+*.bak
+backup/
+*~
+
+# Compiled executables (distribute via Releases, not the repo)
+*.exe
+
+# Compiled Lazarus/FPC units and objects
+*.o
+*.ppu
+*.compiled
+*.or
+*.rsj
+lib/
+
+# Lazarus backup files (Environment Options -> Backup)
+*.bak
+backup/
+*~
+
+# Compiled executables (distribute via Releases, not the repo)
+*.exe
+
+# Lazarus IDE session state (opcional, mucha gente lo excluye)
+*.lps
+
+# Windows junk
+Thumbs.db
+desktop.ini
