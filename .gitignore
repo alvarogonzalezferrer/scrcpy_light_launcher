@@ -29,6 +29,8 @@ lib/
 # Application bundle for Mac OS
 *.app/
 /releases_binary/bin
+/scrcpy_light_launcher/lib/
+/scrcpy_light_launcher/backup
 *.o
 scrcpy_light_launcher/scrcpy_light_launcher.ini
 
