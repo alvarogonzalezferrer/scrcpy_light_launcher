@@ -54,6 +54,11 @@ Section "Scrcpy light launcher (required)"
 
   SectionIn RO
   
+  ; Mata adb.exe si sigue corriendo, para poder sobrescribirlo al actualizar
+  nsExec::Exec 'taskkill /F /IM adb.exe'
+  nsExec::Exec 'taskkill /F /IM scrcpy.exe'
+  Sleep 800
+  
   ; Set output path to the installation directory.
   SetOutPath $INSTDIR
   
